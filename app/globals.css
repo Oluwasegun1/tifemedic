@@ -1,0 +1,345 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B56A4;
+  --color-primary-hover: #08407B;
+  --color-primary-light: #EBF3FC;
+  --color-navy: #0E2A47;
+  --color-slate-dark: #1E242B;
+  --color-body: #334155;
+  --color-bg-soft: #F8FAFC;
+  --color-emerald-accent: #059669;
+  
+  --font-sans: var(--font-plus-jakarta-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #334155;
+    background-color: #ffffff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1E242B;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: #0B56A4;
+    color: #ffffff;
+  }
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+/* Float animations for hero cards */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-10px) rotate(0.5deg); }
+  66%       { transform: translateY(-5px) rotate(-0.5deg); }
+}
+
+@keyframes float-delay {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  40%       { transform: translateY(-8px) rotate(-0.5deg); }
+  70%       { transform: translateY(-3px) rotate(0.3deg); }
+}
+
+/* Slow orbit rotation for decorative rings */
+@keyframes spin-very-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Breathe / pulse for live status dot */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.15); opacity: 0.75; }
+}
+
+/* Shimmer sweep – loading bars */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Gradient background drift */
+@keyframes gradient-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Scroll-reveal helpers */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.90);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Counter number tick */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Pulse ring radiating from live dot */
+@keyframes ping-ring {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Stat card light sweep on hover */
+@keyframes card-shine {
+  0%   { left: -80%; }
+  100% { left: 130%; }
+}
+
+/* Wavy border animation */
+@keyframes border-flow {
+  0%   { border-color: rgba(11, 86, 164, 0.2); }
+  50%  { border-color: rgba(11, 86, 164, 0.6); }
+  100% { border-color: rgba(11, 86, 164, 0.2); }
+}
+
+/* ============================================
+   UTILITY ANIMATION CLASSES
+   ============================================ */
+
+.animate-float-slow    { animation: float-slow  5s ease-in-out infinite; }
+.animate-float-delay   { animation: float-delay 6s ease-in-out 1.5s infinite; }
+.animate-spin-slow     { animation: spin-very-slow 40s linear infinite; }
+.animate-breathe       { animation: breathe 2.8s ease-in-out infinite; }
+.animate-gradient      { animation: gradient-drift 8s ease infinite; background-size: 200% 200%; }
+
+/* Scroll-triggered reveal classes – add via IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delays for children */
+.stagger-1  { transition-delay: 0.08s; }
+.stagger-2  { transition-delay: 0.18s; }
+.stagger-3  { transition-delay: 0.28s; }
+.stagger-4  { transition-delay: 0.38s; }
+
+/* ============================================
+   COMPONENT UTILITIES
+   ============================================ */
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-badge {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(11, 86, 164, 0.12);
+}
+
+/* Gradient text */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #0B56A4 0%, #0E2A47 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #0B56A4 0%, #0284C7 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stat card shine sweep on hover */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-15deg);
+  transition: none;
+  pointer-events: none;
+}
+
+.stat-card:hover::before {
+  animation: card-shine 0.65s ease forwards;
+}
+
+/* CTA button glow ring on focus */
+.btn-glow:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(11, 86, 164, 0.35), 0 0 0 5px rgba(11, 86, 164, 0.12);
+}
+
+/* Animated border for active elements */
+.border-animate {
+  animation: border-flow 3s ease-in-out infinite;
+}
+
+/* ============================================
+   NAV LINK HOVER
+   ============================================ */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0B56A4, #0284C7);
+  border-radius: 9999px;
+  transition: width 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   SCROLL PROGRESS BAR
+   ============================================ */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0B56A4, #0284C7, #059669);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}
