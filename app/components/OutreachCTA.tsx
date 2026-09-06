@@ -128,11 +128,11 @@ export default function OutreachCTA() {
 
             <div className="pt-2">
               <a
-                href="#contact"
+                href="/plan-an-outreach"
                 id="outreach-inquire-btn"
                 className="group w-full inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-[#0B56A4] hover:bg-[#08407B] text-white font-bold text-base transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/35 hover:-translate-y-0.5 active:translate-y-0"
               >
-                <span>Partner or Sponsor an Outreach</span>
+                <span>Partner or Plan an Outreach</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

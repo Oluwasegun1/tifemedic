@@ -172,7 +172,7 @@ export default function Services() {
               {/* Bottom Action CTA */}
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <a
-                  href="#contact"
+                  href="/plan-an-outreach"
                   className={`inline-flex items-center gap-2 text-sm font-bold ${service.color} hover:underline group-hover:translate-x-1 transition-all`}
                 >
                   <span>Book this service</span>

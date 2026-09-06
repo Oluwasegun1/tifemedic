@@ -186,17 +186,17 @@ export default function Hero() {
               style={{ transitionDelay: "0.32s" }}
             >
               <a
-                href="#contact"
+                href="/plan-an-outreach"
                 id="hero-cta-primary"
                 className="btn-glow group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#0B56A4] hover:bg-[#08407B] text-white font-bold text-base transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/40 hover:-translate-y-1 active:translate-y-0"
               >
                 <CalendarCheck className="w-5 h-5 transition-transform group-hover:scale-110" />
-                <span>Schedule a Consultation</span>
+                <span>Start Planning Your Outreach</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
               </a>
 
               <a
-                href="#services"
+                href="/services"
                 id="hero-cta-secondary"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/90 hover:bg-white text-[#0B56A4] font-bold text-base border-2 border-blue-200/80 hover:border-[#0B56A4] transition-all duration-300 shadow-xs hover:shadow-md hover:-translate-y-0.5 group"
               >

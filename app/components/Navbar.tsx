@@ -4,12 +4,11 @@ import { useState, useEffect } from "react";
 import { Menu, X, Activity, Phone, Calendar, ArrowRight } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Outreach Campaigns", href: "#outreach" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Our Services", href: "/services" },
+  { label: "Our Team", href: "/team" },
+  { label: "Past Outreaches", href: "/our-work" },
+  { label: "Plan an Outreach", href: "/plan-an-outreach" },
 ];
 
 export default function Navbar() {
@@ -38,9 +37,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
           <a
-            href="#home"
+            href="/"
             className="flex items-center gap-2.5 group focus:outline-none focus:ring-2 focus:ring-[#0B56A4]/40 rounded-xl p-1"
-            aria-label="TifeMedic - Back to top"
+            aria-label="TifeMedic - Back to home"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0B56A4] to-[#0E2A47] flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
               <Activity className="w-5 h-5 text-white animate-pulse" strokeWidth={2.5} />
@@ -80,12 +79,12 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#contact"
+              href="/plan-an-outreach"
               id="nav-cta-button"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0B56A4] hover:bg-[#08407B] text-white text-xs font-bold transition-all duration-200 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 active:translate-y-0"
             >
               <Calendar className="w-3.5 h-3.5" />
-              <span>Book Consultation</span>
+              <span>Plan an Outreach</span>
               <ArrowRight className="w-3.5 h-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
@@ -132,13 +131,13 @@ export default function Navbar() {
 
             <div className="pt-2 border-t border-slate-100 mt-2">
               <a
-                href="#contact"
+                href="/plan-an-outreach"
                 onClick={handleLinkClick}
                 id="mobile-cta-button"
                 className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#0B56A4] text-white text-sm font-bold shadow-md shadow-blue-500/25 active:scale-95 transition-all"
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book an Outreach / Consultation</span>
+                <span>Plan an Outreach</span>
               </a>
             </div>
           </div>

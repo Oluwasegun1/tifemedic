@@ -29,21 +29,20 @@ function XIcon({ className = "w-4 h-4" }: { className?: string }) {
 }
 
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Our Services", href: "#services" },
-  { label: "Outreach Campaigns", href: "#outreach" },
-  { label: "Client Testimonials", href: "#testimonials" },
-  { label: "Frequently Asked Questions", href: "#faq" },
-  { label: "Book Consultation", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Our Services", href: "/services" },
+  { label: "Our Team", href: "/team" },
+  { label: "Past Outreaches", href: "/our-work" },
+  { label: "Plan an Outreach", href: "/plan-an-outreach" },
 ];
 
 const serviceLinks = [
-  { label: "Corporate Health & Wellness Programs", href: "#services" },
-  { label: "Community Medical Outreach Planning", href: "#services" },
-  { label: "Pharmaceutical Supply & Logistics", href: "#services" },
-  { label: "Healthcare Personnel Staffing", href: "#services" },
-  { label: "Executive Health Screenings", href: "#services" },
+  { label: "Medical Outreach Staffing", href: "/services#medical-outreach-staffing" },
+  { label: "Doctors & Consultations", href: "/services#doctors" },
+  { label: "Nursing Care & Triage", href: "/services#nursing-services" },
+  { label: "Laboratory Diagnostics", href: "/services#laboratory-services" },
+  { label: "Health Screening & Risk Assessment", href: "/services#health-screening" },
+  { label: "Outreach Coordination", href: "/services#outreach-coordination" },
 ];
 
 export default function Footer() {
