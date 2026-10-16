@@ -20,10 +20,10 @@ function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
-function XIcon({ className = "w-4 h-4" }: { className?: string }) {
+function TikTokIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.87-4.49V8.71a8.21 8.21 0 0 0 4.9 1.6V6.85c-.33-.05-.67-.1-1-.16z" />
     </svg>
   );
 }
@@ -94,14 +94,14 @@ export default function Footer() {
                 <InstagramIcon className="w-4 h-4 text-white" />
               </a>
               <a
-                href="https://x.com/tifemedic"
+                href="https://www.tiktok.com/@tifemedic.outreac?_r=1&_t=ZS-9AaItb5gtc4"
                 target="_blank"
                 rel="noopener noreferrer"
-                id="footer-twitter"
-                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-sky-500 flex items-center justify-center transition-all duration-200 hover:scale-105"
-                aria-label="TifeMedic X (Twitter)"
+                id="footer-tiktok"
+                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-black flex items-center justify-center transition-all duration-200 hover:scale-105"
+                aria-label="TifeMedic TikTok"
               >
-                <XIcon className="w-4 h-4 text-white" />
+                <TikTokIcon className="w-4 h-4 text-white" />
               </a>
               <a
                 href="mailto:tifemedic@gmail.com"

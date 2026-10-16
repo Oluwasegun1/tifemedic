@@ -58,13 +58,8 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "TifeMedic – Medical Outreach & Healthcare Consulting",
-    description:
-      "Empowering communities and corporate teams with accessible, quality healthcare services across Nigeria.",
-    creator: "@tifemedic",
-    images: ["/hero.jpg"],
+  other: {
+    "tiktok:creator": "@tifemedic.outreac",
   },
   robots: {
     index: true,
@@ -106,7 +101,7 @@ const jsonLd = {
       },
       sameAs: [
         "https://instagram.com/tifemedic",
-        "https://x.com/tifemedic",
+        "https://www.tiktok.com/@tifemedic.outreac?_r=1&_t=ZS-9AaItb5gtc4",
       ],
       medicalSpecialty: [
         "CommunityHealth",

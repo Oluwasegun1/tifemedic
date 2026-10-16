@@ -40,9 +40,9 @@ function AnimatedStat({
 }
 
 const stats = [
-  { value: 50,   suffix: "+",    label: "Corporate Outreaches Delivered", description: "Organized for banks, NGOs & multinationals", icon: Building2, color: "text-[#0B56A4]", bg: "bg-blue-50", border: "border-blue-100" },
-  { value: 200,  suffix: "+",    label: "Qualified Medical Personnel",    description: "Verified physicians, nurses & lab scientists",  icon: Users,     color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-  { value: 10000,suffix: "+",    label: "Community Lives Impacted",       description: "Screened, treated, and educated across Nigeria", icon: MapPin,    color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-100" },
+  { value: 20,   suffix: "+",    label: "Outreaches Delivered", description: "Organized for banks, NGOs & multinationals", icon: Building2, color: "text-[#0B56A4]", bg: "bg-blue-50", border: "border-blue-100" },
+  { value: 50,  suffix: "+",    label: "Qualified Medical Personnel",    description: "Verified physicians, nurses & lab scientists",  icon: Users,     color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+  { value: 1000,suffix: "+",    label: "Community Lives Impacted",       description: "Screened, treated, and educated across Nigeria", icon: MapPin,    color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-100" },
 ];
 
 const pillars = [

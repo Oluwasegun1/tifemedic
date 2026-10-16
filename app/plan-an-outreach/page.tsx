@@ -31,6 +31,8 @@ import {
   Phone,
   Mail,
   Send,
+  Loader2,
+  AlertCircle,
 } from "lucide-react";
 
 const organisationTypes = [
@@ -61,6 +63,8 @@ function PlanAnOutreachContent() {
   // Step State (1 to 5)
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -121,9 +125,37 @@ function PlanAnOutreachContent() {
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));
 
   // Submit Handler
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error?.message || data.error || "Failed to send outreach request.");
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error("Error submitting outreach request:", err);
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : "An unexpected error occurred while sending your request. Please try again or contact us directly."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -246,7 +278,7 @@ function PlanAnOutreachContent() {
                   <span className="text-xs font-bold uppercase tracking-wider text-blue-300 block mb-1">
                     Medical Outreach Request Form
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold">Plan Your Outreach With Us</h2>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Plan Your Outreach With Us</h2>
                 </div>
                 <div className="hidden sm:flex items-center gap-2 bg-white/10 px-4 py-2 rounded-xl text-xs font-bold">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -301,6 +333,7 @@ function PlanAnOutreachContent() {
                     <button
                       onClick={() => {
                         setIsSubmitted(false);
+                        setSubmitError(null);
                         setCurrentStep(1);
                       }}
                       className="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs cursor-pointer"
@@ -696,13 +729,30 @@ function PlanAnOutreachContent() {
                     ) : (
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-600/20 transition-all cursor-pointer"
+                        disabled={isSubmitting}
+                        className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-sm shadow-lg shadow-emerald-600/20 transition-all cursor-pointer"
                       >
-                        <Send className="w-4 h-4" />
-                        <span>Submit Outreach Request</span>
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                            <span>Sending Outreach Request...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Send className="w-4 h-4" />
+                            <span>Submit Outreach Request</span>
+                          </>
+                        )}
                       </button>
                     )}
                   </div>
+
+                  {submitError && (
+                    <div className="mt-4 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2.5">
+                      <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-600" />
+                      <span>{submitError}</span>
+                    </div>
+                  )}
                 </form>
               )}
             </div>

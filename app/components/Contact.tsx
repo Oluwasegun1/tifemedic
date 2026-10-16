@@ -11,6 +11,7 @@ import {
   Sparkles,
   ShieldAlert,
   ArrowRight,
+  AlertCircle,
 } from "lucide-react";
 
 function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -31,10 +32,10 @@ function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
-function XIcon({ className = "w-4 h-4" }: { className?: string }) {
+function TikTokIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.87-4.49V8.71a8.21 8.21 0 0 0 4.9 1.6V6.85c-.33-.05-.67-.1-1-.16z" />
     </svg>
   );
 }
@@ -98,6 +99,7 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -110,10 +112,32 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate safe client submission
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error?.message || data.error || "Failed to send consultation request.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : "Failed to send your request. Please try again or chat with us on WhatsApp."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -159,6 +183,7 @@ export default function Contact() {
                   <button
                     onClick={() => {
                       setSubmitted(false);
+                      setErrorMessage(null);
                       setFormState({
                         name: "",
                         organization: "",
@@ -324,7 +349,7 @@ export default function Contact() {
                     id="contact-submit-btn"
                     type="submit"
                     disabled={loading}
-                    className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#0B56A4] hover:bg-[#08407B] text-white font-bold text-base transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/35 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70"
+                    className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#0B56A4] hover:bg-[#08407B] text-white font-bold text-base transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/35 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 cursor-pointer"
                   >
                     {loading ? (
                       <>
@@ -339,6 +364,13 @@ export default function Contact() {
                       </>
                     )}
                   </button>
+
+                  {errorMessage && (
+                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-600" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
                 </form>
               )}
             </div>
@@ -418,13 +450,13 @@ export default function Contact() {
                   <span>Instagram</span>
                 </a>
                 <a
-                  href="https://x.com/tifemedic"
+                  href="https://www.tiktok.com/@tifemedic.outreac?_r=1&_t=ZS-9AaItb5gtc4"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-sky-50 hover:text-sky-600 text-slate-700 text-xs font-bold transition-colors border border-slate-200/60"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-slate-100 hover:text-black text-slate-700 text-xs font-bold transition-colors border border-slate-200/60"
                 >
-                  <XIcon className="w-4 h-4" />
-                  <span>X / Twitter</span>
+                  <TikTokIcon className="w-4 h-4" />
+                  <span>TikTok</span>
                 </a>
               </div>
             </div>

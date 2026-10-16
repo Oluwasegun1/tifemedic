@@ -21,27 +21,44 @@ import {
 // Team Members Dataset
 const teamMembers = [
   {
-    id: "dr-tife-adebayo",
-    name: "Dr. Tife Adebayo",
+    id: "dr-tife-ogunbanjo",
+    name: "Dr. Boluwatife Ogunbanjo",
     role: "Lead Medical Director & Clinical Consultant",
     category: "Medical Doctors",
-    photo: "/team_doctor_female.jpg",
-    qualifications: "MBBS, MPH (Community Health), FWACP",
-    certifications: "MDCN Registered Physician (Lic. No. MD/64921)",
+    photo: "/Dr. Tife.png",
+    qualifications: "MBBS, MBChB, Graduate of Medicine and Surgery",
+    certifications: "MDCN Registered Physician ",
     expertise: [
       "Public Health Leadership",
       "Preventive Cardiology",
       "Community Triage & Emergency Response",
       "Health Strategy Consulting",
     ],
-    bio: "Dr. Tife leads TifeMedic's clinical direction with over 12 years of experience in public health, rural medical missions, and health system design across West Africa. She specializes in large-scale disease screening and health equity.",
+    bio: "Dr. Bolu is a medical doctor passionate about preventive healthcare, patient education, wellness, and community-based medical care. She provides medical consultations, health screenings, medical outreaches, health education, minor procedures, and wellness support, with a strong commitment to compassionate, evidence-based care.",
   },
   {
-    id: "nurse-samuel-okonkwo",
-    name: "Nurse Samuel Okonkwo",
+    id: "dr-esther-emeli",
+    name: "Dr. Esther Emeli",
+    role: "Medical Officer",
+    category: "Medical Doctors",
+    photo: "/Dr.ESther.png",
+    qualifications: "MBBS, MBChB, Graduate of Medicine and Surgery",
+    certifications: "MDCN Registered Physician ",
+    experience: "8 Years Experience",
+    expertise: [
+      "Community & Clinical Medicine",
+      "Community Health & Medical Outreaches",
+      "Primary Health Care",
+      "General Medical Consultations",
+    ],
+    bio: "Dr. Esther is a medical doctor with over 8 years of experience across community and clinical medicine. She is dedicated to delivering accessible, patient-centered healthcare with a particular focus on primary health care, community health, and medical outreaches. She provides general medical consultations, health assessments, preventive healthcare, and patient education, combining clinical expertise with a compassionate approach to care."
+  },
+  {
+    id: "nurse-maris",
+    name: "Nurse Maris Orimolade",
     role: "Head of Nursing Services & Clinical Operations",
     category: "Nurses",
-    photo: "/team_nurse_male.jpg",
+    photo: "/Nurse Maris.png",
     qualifications: "B.N.Sc, RN, RM, RPN",
     certifications: "NMCN Certified Nurse Practitioner",
     expertise: [
@@ -50,72 +67,117 @@ const teamMembers = [
       "Community Immunization & Hygiene",
       "Wound Care & First Aid",
     ],
-    bio: "Samuel oversees TifeMedic's nursing protocols and field care delivery. With extensive emergency and community nursing experience, he ensures seamless patient triage and empathetic bedside care during outreach campaigns.",
+    bio: "Maris oversees TifeMedic's nursing protocols and field care delivery. With extensive emergency and community nursing experience, he ensures seamless patient triage and empathetic bedside care during outreach campaigns.",
   },
   {
-    id: "mls-chioma-eze",
-    name: "MLS Chioma Eze",
-    role: "Chief Medical Laboratory Scientist",
+    id: "mr_franks",
+    name: "Mr. Franklin Udoka",
+    role: "Laboratory Scientist",
     category: "Laboratory Professionals",
-    photo: "/hero.jpg",
-    qualifications: "BMLS (Medical Lab Science), MSc Pathology",
+    photo: "/Frank.png",
+    qualifications: "BMLS (Medical Lab Science)",
     certifications: "AMLSCN Licensed Medical Laboratory Scientist",
     expertise: [
       "Point-of-Care Diagnostics",
       "Hematology & Parasitology",
-      "Cold-Chain Sample Preservation",
       "Quality Assurance & Bio-Safety",
     ],
-    bio: "Chioma manages all point-of-care laboratory investigations and diagnostic accuracy for TifeMedic outreaches. She brings 9+ years of experience in diagnostic microbiology and rapid lab screening protocols.",
+    bio: "Abiola manages all point-of-care laboratory investigations and diagnostic accuracy for TifeMedic outreaches. She brings 9+ years of experience in diagnostic microbiology and rapid lab screening protocols.",
   },
   {
-    id: "olatunde-balogun",
-    name: "Olatunde Balogun",
-    role: "Senior Outreach Logistics Coordinator",
-    category: "Outreach Coordinators",
-    photo: "/outreach_health_check.jpg",
-    qualifications: "B.Sc Public Administration, PMP",
-    certifications: "Certified Project Management Professional (PMI)",
+    id: "mr_kenny",
+    name: "Mr. Kenny Akinjole",
+    role: "Laboratory Scientist",
+    category: "Laboratory Professionals",
+    photo: "/Kenny.png",
+    qualifications: "BMLS (Medical Lab Science)",
+    certifications: "AMLSCN Licensed Medical Laboratory Scientist",
     expertise: [
-      "Field Logistics & Venue Planning",
-      "Crowd Control & Safety Protocols",
-      "Pharmaceutical Supply Chain",
-      "Community Stakeholder Engagement",
+      "Point-of-Care Diagnostics",
+      "Hematology & Parasitology",
+      "Quality Assurance & Bio-Safety",
     ],
-    bio: "Olatunde coordinates venue setup, security, volunteer deployment, and pharmacy supply chains for TifeMedic's high-volume community missions, ensuring smooth execution without operational bottlenecks.",
+    bio: "Dedicated and detail-oriented Medical Laboratory Personnel,  8 years experience with hands-on expertise in Haematology, Immunology, Chemical Pathology, Phlebotomy, Microbiology, and Immunohistochemistry. Proficient in sample collection, analysis, quality control, and accurate result interpretation to support effective diagnosis and patient care. Committed to laboratory best practices, safety, and continuous learning.",
   },
+
   {
-    id: "dr-emmanuel-folorunsho",
-    name: "Dr. Emmanuel Folorunsho",
-    role: "Consultant Family Physician & Medical Assessor",
-    category: "Medical Doctors",
-    photo: "/team_nurse_male.jpg",
-    qualifications: "MBBS, FMCGP",
-    certifications: "MDCN Registered Specialist",
+    id: "Abiola",
+    name: "Mr. Abiola Ogunfowokan",
+    role: "Triage Officer",
+    category: "Medical Outreach Team",
+    photo: "/abiola.png",
+    qualifications: "BMLS (Medical Lab Science)",
+    certifications: "AMLSCN Licensed Medical Laboratory Scientist",
     expertise: [
-      "Hypertension & Diabetes Management",
-      "Geriatric Health Screenings",
-      "Occupational Health Audits",
-      "Health Education",
+      "Patient Triage & Assessment",
+      "Clinical Screening & Referral",
+      "Outreach Coordination & Logistics",
     ],
-    bio: "Dr. Emmanuel conducts specialist clinical consultations and risk stratification for corporate wellness days and rural health missions, helping clients detect early indicators of chronic lifestyle conditions.",
+    bio: "Abiola oversees patient triage and initial health assessments during TifeMedic outreaches, helping to identify patients who require further medical attention and appropriate referral. She also supports the coordination of outreach activities, ensuring efficient patient flow, team organization, and smooth delivery of healthcare services.",
   },
-  {
-    id: "grace-adesina",
-    name: "Grace Adesina",
-    role: "Head of Operations & Client Partnerships",
-    category: "Administrative/Operations Team",
-    photo: "/team_doctor_female.jpg",
-    qualifications: "B.Sc Health Administration, MBA",
-    certifications: "Certified Healthcare Administrator",
-    expertise: [
-      "Partner Relations & Contracting",
-      "Corporate CSR Alignment",
-      "Budget Planning & Compliance",
-      "Impact Reporting",
-    ],
-    bio: "Grace acts as the chief liaison for corporate partners, NGOs, and church leaders. She translates organizational health objectives into tailored outreach proposals and oversees client satisfaction.",
-  },
+  // {
+  //   id: "Abiola",
+  //   name: "Abiola",
+  //   role: "Medical Laboratory Scientist",
+  //   category: "Laboratory Professionals",
+  //   photo: "/abiola.png",
+  //   qualifications: "BMLS (Medical Lab Science)",
+  //   certifications: "AMLSCN Licensed Medical Laboratory Scientist",
+  //   expertise: [
+  //     "Point-of-Care Diagnostics",
+  //     "Hematology & Parasitology",
+  //     "Quality Assurance & Bio-Safety",
+  //   ],
+  //   bio: "Abiola manages all point-of-care laboratory investigations and diagnostic accuracy for TifeMedic outreaches. She brings 9+ years of experience in diagnostic microbiology and rapid lab screening protocols.",
+  // },
+  // {
+  //   id: "olatunde-balogun",
+  //   name: "Olatunde Balogun",
+  //   role: "Senior Outreach Logistics Coordinator",
+  //   category: "Outreach Coordinators",
+  //   photo: "/outreach_health_check.jpg",
+  //   qualifications: "B.Sc Public Administration, PMP",
+  //   certifications: "Certified Project Management Professional (PMI)",
+  //   expertise: [
+  //     "Field Logistics & Venue Planning",
+  //     "Crowd Control & Safety Protocols",
+  //     "Pharmaceutical Supply Chain",
+  //     "Community Stakeholder Engagement",
+  //   ],
+  //   bio: "Olatunde coordinates venue setup, security, volunteer deployment, and pharmacy supply chains for TifeMedic's high-volume community missions, ensuring smooth execution without operational bottlenecks.",
+  // },
+  // {
+  //   id: "dr-emmanuel-folorunsho",
+  //   name: "Dr. Emmanuel Folorunsho",
+  //   role: "Consultant Family Physician & Medical Assessor",
+  //   category: "Medical Doctors",
+  //   photo: "/team_nurse_male.jpg",
+  //   qualifications: "MBBS, FMCGP",
+  //   certifications: "MDCN Registered Specialist",
+  //   expertise: [
+  //     "Hypertension & Diabetes Management",
+  //     "Geriatric Health Screenings",
+  //     "Occupational Health Audits",
+  //     "Health Education",
+  //   ],
+  //   bio: "Dr. Emmanuel conducts specialist clinical consultations and risk stratification for corporate wellness days and rural health missions, helping clients detect early indicators of chronic lifestyle conditions.",
+  // },
+  // {
+  //   id: "grace-adesina",
+  //   name: "Grace Adesina",
+  //   role: "Head of Operations & Client Partnerships",
+  //   category: "Administrative/Operations Team",
+  //   photo: "/team_doctor_female.jpg",
+  //   qualifications: "B.Sc Health Administration, MBA",
+  //   certifications: "Certified Healthcare Administrator",
+  //   expertise: [
+  //     "Partner Relations & Contracting",
+  //     "Corporate CSR Alignment",
+  //     "Budget Planning & Compliance",
+  //     "Impact Reporting",
+  //   ],
+  //   bio: "Grace acts as the chief liaison for corporate partners, NGOs, and church leaders. She translates organizational health objectives into tailored outreach proposals and oversees client satisfaction.",
+  // },
 ];
 
 const categories = [
@@ -187,11 +249,10 @@ export default function TeamPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-                    selectedCategory === cat
-                      ? "bg-[#0B56A4] text-white shadow-md shadow-blue-500/20"
-                      : "bg-slate-100 hover:bg-slate-200 text-slate-600"
-                  }`}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${selectedCategory === cat
+                    ? "bg-[#0B56A4] text-white shadow-md shadow-blue-500/20"
+                    : "bg-slate-100 hover:bg-slate-200 text-slate-600"
+                    }`}
                 >
                   {cat}
                 </button>
@@ -210,15 +271,15 @@ export default function TeamPage() {
               >
                 <div>
                   {/* Photo & Badge */}
-                  <div className="relative h-64 w-full bg-slate-100 overflow-hidden">
+                  <div className="relative h-90 w-full bg-slate-100 overflow-hidden">
                     <Image
                       src={member.photo}
                       alt={member.name}
                       fill
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover  object-center group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0E2A47]/80 via-transparent to-transparent opacity-80" />
-                    
+
                     <div className="absolute bottom-4 left-4 right-4">
                       <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-blue-200 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full mb-1">
                         {member.category}
@@ -284,7 +345,7 @@ export default function TeamPage() {
         {/* Bottom CTA Section */}
         <section className="py-16 bg-[#0E2A47] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 text-white">
               Deploy Vetted Healthcare Professionals for Your Organization
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base mb-8">

@@ -28,14 +28,14 @@ import {
 // Real/Verified Case Studies Dataset
 const caseStudies = [
   {
-    id: "ikorodu-community-health-mission",
-    title: "Ikorodu Community Mega Health Mission",
-    partner: "Grace Foundation & Ikorodu Community Development Association",
-    location: "Ikorodu, Lagos State",
-    date: "November 18, 2025",
-    type: "Community & Rural Outreach",
-    heroImage: "/outreach_health_check.jpg",
-    gallery: ["/outreach_health_check.jpg", "/hero.jpg", "/outreach.jpg"],
+    id: "TCNJ_Men_Gathering_Health_Screening",
+    title: "TCNJ Men Gathering Health Screening",
+    partner: "TCNJ Men Gathering",
+    location: "LBS, Lagos State",
+    date: "August 26, 2026",
+    type: "faith-medical-outreach",
+    heroImage: "/IMG_0606.jpg",
+    gallery: ["/IMG_1960.jpg","/IMG_1963.jpg", "/IMG_1961.jpg", "/IMG_1938.jpg", "/IMG_1968.jpg", "/IMG_1942.jpg"],
     
     // Storytelling Structure
     theNeed:
@@ -56,8 +56,8 @@ const caseStudies = [
 
     // Team Deployed
     teamStats: {
-      totalPersonnel: 22,
-      breakdown: "5 Doctors, 8 Nurses, 4 Lab Scientists, 3 Coordinators, 2 Pharmacists",
+      totalPersonnel: 5,
+      breakdown: "1 Doctor, 2 Nurses, 1 Lab Scientists, 1 Coordinators",
     },
 
     // Measurable Impact Stats
@@ -72,14 +72,15 @@ const caseStudies = [
   },
 
   {
-    id: "corporate-wellness-day-ikeja",
+    id: "corporate-wellness-day",
     title: "Executive Corporate Health & Wellness Screening",
-    partner: "Apex Financial Services PLC",
-    location: "Ikeja Corporate HQ, Lagos",
-    date: "August 12, 2025",
+    partner: "Kristil project ",
+    location: "Victoria Island, Lagos",
+    date: "December 21, 2025",
     type: "Corporate Health Program",
-    heroImage: "/team_doctor_female.jpg",
-    gallery: ["/team_doctor_female.jpg", "/team_nurse_male.jpg", "/hero.jpg"],
+      heroImage: "/Dec001.jpeg",
+    gallery: ["/Dec001.jpeg", "/Dec002.jpeg", "/Dec003.jpeg", "/Dec004.jpeg", "/Dec005.jpeg", "/Dec006.jpeg"],
+    
     
     // Storytelling Structure
     theNeed:
@@ -117,13 +118,13 @@ const caseStudies = [
 
   {
     id: "faith-medical-outreach-yaba",
-    title: "Annual Community Faith Health Fair",
-    partner: "St. Mark's Cathedral Outreach Ministries",
-    location: "Yaba, Lagos State",
-    date: "February 24, 2026",
+    title: "Project-58",
+    partner: "The Covenant Nation, Jesutedo",
+    location: "Songotedo, Lagos State",
+    date: "September 12, 2026",
     type: "Faith-Based Outreach",
-    heroImage: "/outreach.jpg",
-    gallery: ["/outreach.jpg", "/outreach_health_check.jpg", "/team_nurse_male.jpg"],
+    heroImage: "/tcnj-1.jpeg",
+    gallery: ["/tcnj-1.jpeg", "/tcnj-2.jpeg", "/tcnj-3.jpeg", "/tcnj-4.jpeg", "/tcnj-5.jpeg", "/tcnj-6.jpeg"],
     
     // Storytelling Structure
     theNeed:
@@ -225,7 +226,7 @@ export default function OurWorkPage() {
                   <span className="text-xs font-bold uppercase tracking-wider text-blue-400 bg-white/10 px-3 py-1 rounded-full">
                     {study.type}
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold mt-2">{study.title}</h2>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold mt-2 text-white">{study.title}</h2>
                   <p className="text-xs text-slate-300 mt-1 flex items-center gap-1.5">
                     <Building2 className="w-3.5 h-3.5 text-blue-300" />
                     <span>Partner: <strong>{study.partner}</strong></span>
@@ -426,7 +427,7 @@ export default function OurWorkPage() {
         {/* Bottom CTA */}
         <section className="py-16 bg-[#0E2A47] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 text-white">
               Partner With Us to Create Measurable Impact
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base mb-8">
